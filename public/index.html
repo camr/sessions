@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Session Timer</title>
+
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./sessions.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.3/luxon.min.js"
+      integrity="sha512-gUQcFuEaDuAEqvxIQ9GDdMcCeFmG5MPnoc6ruJn+nyCNHrHM2oB97GOVLIOiixzTxPYmIfEQbOoQmx55UscLyw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/swipejs/2.3.1/swipe.min.js"
+      integrity="sha512-BdYpeNsC3p5iNMUKJEOuFvw/rkAuRos9X8T107qg13ERANBmWy+JHVOB6KrllL0SOjbnSjtdowWmx0xKa/U9cg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body class="bg-slate-700 text-light h-full m-0">
+    <tnia-event></tnia-event>
+
+    <script>
+      // Register the service worker
+      if ('serviceWorker' in navigator) {
+        // Wait for the 'load' event to not block other work
+        window.addEventListener('load', async () => {
+          // Try to register the service worker.
+          try {
+            // Capture the registration for later use, if needed
+            let reg;
+
+            reg = await navigator.serviceWorker.register('/service-worker.js', {
+              type: 'module',
+            });
+
+            console.log('Service worker registered! 😎');
+          } catch (err) {
+            console.log('😥 Service worker registration failed: ', err);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

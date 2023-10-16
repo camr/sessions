@@ -1,0 +1,22 @@
+{
+  "name": "sessions",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^2.7.6"
+  },
+  "devDependencies": {
+    "@iconify-json/material-symbols": "^1.1.59",
+    "@unocss/preset-icons": "^0.56.5",
+    "@unocss/preset-typography": "^0.56.5",
+    "@unocss/preset-uno": "^0.56.5",
+    "unocss": "^0.56.5",
+    "vite": "^4.4.5"
+  }
+}
